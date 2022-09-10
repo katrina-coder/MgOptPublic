@@ -2,7 +2,7 @@ import ipywidgets as widgets
 from ipywidgets import Layout, HBox, VBox
 from IPython.display import display, clear_output
 if 'google.colab' in str(get_ipython()):
-    from AlloyML_Public.optimiser import *
+    from MgOptPublic.optimiser import *
 else:
     from optimiser import *
 
