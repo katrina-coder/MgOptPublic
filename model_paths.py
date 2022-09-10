@@ -2,7 +2,7 @@ import warnings
 import joblib
 
 if 'google.colab' in str(get_ipython()):
-    model_dir = "AlloyML_Public/models"
+    model_dir = "MgOptPublic/models"
 else:
     model_dir = "models"
 
