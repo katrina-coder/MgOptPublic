@@ -7,9 +7,11 @@ import ipywidgets as widgets
 from IPython import display as disp
 if 'google.colab' in str(get_ipython()):
     from MgOptPublic.model_paths import models
+    from MgOptPublic.BO import alloys_bayes_opt
 else:
     from model_paths import models
-from BO import alloys_bayes_opt
+    from BO import alloys_bayes_opt
+
 
 class AlDatapoint:
     def __init__(self, settings):
