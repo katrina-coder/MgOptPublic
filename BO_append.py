@@ -344,10 +344,8 @@ class alloys_bayes_opt_append:
                 samples_df = self.samples_df
                 #score = self.gp.score(self.x, self.y)
                 
-            print(gp1.predict(samples_df, return_std = True)[0].shape)
-            print(gp1.predict(samples_df, return_std = True)[1].shape)
-            util1 = gp1.predict(samples_df, return_std = True)[0]+ self.kappa*(gp1.predict(samples_df, return_std = True)[1])
-            util2 = gp2.predict(samples_df, return_std = True)[0]+ self.kappa*(gp2.predict(samples_df, return_std = True)[1])
+            util1 = gp1.predict(samples_df, return_std = True)[0]+ self.kappa*(gp1.predict(samples_df, return_std = True)[1].reshape(-1,1))
+            util2 = gp2.predict(samples_df, return_std = True)[0]+ self.kappa*(gp2.predict(samples_df, return_std = True)[1].reshape(-1,1))
             utils = util1 + util2
             #utils = self.utility.utility(samples_df, self.gp, 0)
             
