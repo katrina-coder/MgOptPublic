@@ -1,4 +1,4 @@
-import alloysHT
+import MgOptPublic.alloysHT as alloysHT
 from sklearn.model_selection import train_test_split
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import DotProduct, WhiteKernel, RBF, ConstantKernel as C
