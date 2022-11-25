@@ -131,13 +131,15 @@ class inverse_pred:
             random_set["Mg"]= 100 - sum([v for k, v in random_set.items()])            
             
             for l,j in enumerate(ht_list):
+              print(
                 temp_sample = copy.copy(random_set)
                 temp_sample[ht_list[l]]= 1
                 if temp_sample["Mg"]<bound_dict['Mg'][1] and bound_dict[ht_list[l]][1]==1: #### ignore samples with Mg content greater than upper bound of Mg (here 95%)
-                    temp_sample
+#                     temp_sample
                     final_samples.append(temp_sample)
+                    print('added a sample: ' + len(final_samples))
             s+=1                    
-        
+        print(len(final_samples))
         sampler_df = pd.DataFrame (final_samples, columns= list(bound_dict.keys()))
         sampler_df = sampler_df[self.elem_og_sorted]
 
