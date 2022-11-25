@@ -137,7 +137,6 @@ class inverse_pred:
 #                     temp_sample
                     final_samples.append(temp_sample)
             s+=1                    
-        print(len(final_samples))
         sampler_df = pd.DataFrame (final_samples, columns= list(bound_dict.keys()))
         sampler_df = sampler_df[self.elem_og_sorted]
 
