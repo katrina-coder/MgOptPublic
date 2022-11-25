@@ -246,8 +246,8 @@ class alloys_bayes_opt:
             samples_df = self.samples_df
                 
                 
-            util1 = gp1.predict(samples_df, return_std = True)[0]+ self.kappa*(gp1.predict(samples_df, return_std = True)[1])
-            util2 = gp2.predict(samples_df, return_std = True)[0]+ self.kappa*(gp2.predict(samples_df, return_std = True)[1])
+            util1 = gp1.predict(samples_df, return_std = True)[0]+ self.kappa*(gp1.predict(samples_df, return_std = True)[1].reshape(-1,1))
+            util2 = gp2.predict(samples_df, return_std = True)[0]+ self.kappa*(gp2.predict(samples_df, return_std = True)[1].reshape(-1,1))
             utils = util1 + util2
             
             
