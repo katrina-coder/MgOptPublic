@@ -308,7 +308,7 @@ def generateMainGUI(mode):
         display(run_scan_button)
     
         def on_button_clicked(b):
-            print('start running model ....')
+            print('\nstart running model ....')
             optimiser(extractSettingsFromGUI(GUI_inputs, mode))
     
         run_scan_button.on_click(on_button_clicked)
