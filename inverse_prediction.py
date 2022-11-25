@@ -153,8 +153,9 @@ class inverse_pred:
     def prediction(self):
         ht_list = ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']
         all_closest_pred = pd.DataFrame(columns = list(self.x.columns) + self.output_names)
-
+        print('we are in prediction def!')
         for i in range(self.iter_num):
+            print('prediction in the loop...')
             samples = self.sampler()
            
             yhat = self.model.predict(samples)
