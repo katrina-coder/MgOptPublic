@@ -136,7 +136,7 @@ class inverse_pred:
                 if temp_sample["Mg"]<bound_dict['Mg'][1] and bound_dict[ht_list[l]][1]==1: #### ignore samples with Mg content greater than upper bound of Mg (here 95%)
 #                     temp_sample
                     final_samples.append(temp_sample)
-                    print('added a sample: ' , len(final_samples))
+                    print(f'added a sample: {len(final_samples)}')
             s+=1                    
         print(len(final_samples))
         sampler_df = pd.DataFrame (final_samples, columns= list(bound_dict.keys()))
