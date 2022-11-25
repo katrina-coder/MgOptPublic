@@ -136,7 +136,6 @@ class inverse_pred:
                 if temp_sample["Mg"]<bound_dict['Mg'][1] and bound_dict[ht_list[l]][1]==1: #### ignore samples with Mg content greater than upper bound of Mg (here 95%)
 #                     temp_sample
                     final_samples.append(temp_sample)
-                    print(f'added a sample: {len(final_samples)}')
             s+=1                    
         print(len(final_samples))
         sampler_df = pd.DataFrame (final_samples, columns= list(bound_dict.keys()))
@@ -152,9 +151,7 @@ class inverse_pred:
     def prediction(self):
         ht_list = ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']
         all_closest_pred = pd.DataFrame(columns = list(self.x.columns) + self.output_names)
-        print('we are in prediction def!')
         for i in range(self.iter_num):
-            print('prediction in the loop...')
             samples = self.sampler()
            
             yhat = self.model.predict(samples)
