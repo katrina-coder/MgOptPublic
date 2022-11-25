@@ -153,7 +153,8 @@ class inverse_pred:
         all_closest_pred = pd.DataFrame(columns = list(self.x.columns) + self.output_names)
         for i in range(self.iter_num):
             samples = self.sampler()
-           
+            while not samples.shape[0]:
+               samples = self.sampler()
             yhat = self.model.predict(samples)
             closest_prediction_index = abs(yhat - self.desired_y).argmin()
             closest_prediction_y = yhat[closest_prediction_index]
