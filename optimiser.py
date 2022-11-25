@@ -240,6 +240,8 @@ class optimiser:
                  'Y', 'Gd', 'Cu', 'Si', 'Li', 'Yb', 'Th', 'Sb', 'Pr', 'Ga', 'Be', 'Fe',
                  'Ni', 'Sc', 'Tb', 'Dy', 'Er', 'Sr', 'Bi', 'Extruded', 'ECAP', 'Cast_Slow', 'Cast_Fast', 'Cast_HT', 'Wrought'],
                 alloy_array.reshape(-1,)))
+            if not mg_balance:
+                print('\033[1m'+'\033[91m'+ "Mg content has been balanced to "+ str(final_alloy['Mg']) + " %" +'\033[0m')
             print(final_alloy)
             print('\n')
             print('Predicted %f Elongation' % (self.models['elongation'].predict(alloy_array)[0]))
