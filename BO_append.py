@@ -355,7 +355,8 @@ class alloys_bayes_opt_append:
             
             predicted_Y = gp1.predict(samples_df)
             predicted_Z = gp2.predict(samples_df)
-            
+            print(f'next index: {next_point_index}')
+            print(samples_df.shape)
             X_next = self.samples_df.iloc[next_point_index, :]
             Y_next = rf1.predict(X_next.values.reshape(1,-1)) 
             Z_next = rf2.predict(X_next.values.reshape(1,-1)) 
