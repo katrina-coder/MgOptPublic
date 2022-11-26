@@ -76,7 +76,7 @@ def extractSettingsFromGUI(GUI_inputs, mode):
 
 def generateModeSelectionGUI(mode = 'Bayesian Optimization'):
     mode_dropdown = widgets.Dropdown(
-        options=['Bayesian Optimization', 'Prediect Property', 'Inverse Prediction'],
+        options=['Bayesian Optimization', 'Property Prediction', 'Inverse Prediction'],
         value=mode,
         description='<b>Select Mode:</b>',
         style={'description_width': 'initial'},
