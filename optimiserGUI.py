@@ -209,7 +209,7 @@ def generateMainGUI(mode):
             ht_settings_VBox.append(HBox([key_label, input_box]))
             GUI_inputs["bo_settings"]["Heat Treatment"][heats[i]] = input_box 
         
-        bo_settings_width = '200px'
+        bo_settings_width = '100px'
         scan_settings_VBox = [widgets.HTML("<b>Inverse Sampling settings</b>")]
         label = widgets.Label("Desired Output:", layout=Layout(width='120px'))
         input_box = widgets.Dropdown(
