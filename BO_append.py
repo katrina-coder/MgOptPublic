@@ -246,7 +246,7 @@ class alloys_bayes_opt_append:
     def next_suggestions(self):
         n = self.iter_num
         for i in range(n):
-            print("Sample ", i+1)
+            print("Sample ", i+1, " is preparing.")
             self.samples_df = self.sampler() ### if we don't want to append sampler within the i iterations
             if self.pca_dim > 0:
                 samples_df = self.pca.transform(self.samples_df)
@@ -332,7 +332,7 @@ class alloys_bayes_opt_append:
         
         n = self.iter_num
         for i in range(n):
-            print("Sample ", i+1)
+            print("Sample ", i+1, " is preparing.")
             self.samples_df = self.sampler() ### if we don't want to append sampler within the i iterations
             if self.pca_dim > 0:
                 samples_df = self.pca.transform(self.samples_df)
