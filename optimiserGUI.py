@@ -299,9 +299,9 @@ def generateMainGUI(mode):
             categorical_inputs_VBox.append(value_checkbox)
             GUI_inputs["categorical_inputs"][key].append(value_checkbox)
     
-        first_column = VBox(range_based_inputs_VBox)
+        first_column = VBox(range_based_inputs_VBox, layout=LEFT_RIGHT_PADDING)
     
-        second_column = VBox([VBox(categorical_inputs_VBox, layout=LEFT_RIGHT_PADDING)])
+        second_column = VBox([VBox(categorical_inputs_VBox, layout=BOTTOM_PADDING)])
         display(HBox([first_column, second_column]))
     
         run_scan_button = widgets.Button(description="Run Model")
