@@ -124,7 +124,7 @@ def generateMainGUI(mode):
         ht_settings_VBox = [widgets.HTML("<b>Thermomechanical process:</b>")]
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
         for i, key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
-            key_label = widgets.Label(f"{key}:", layout=Layout(width='130px'))
+            key_label = widgets.Label(f"{key}:", layout=Layout(width='140px'))
             input_box = widgets.RadioButtons(value=settings.normalize_target, options=['True', 'False'], description = '', disabled=False, indent=False)
             ht_settings_VBox.append(HBox([key_label, input_box]))
             GUI_inputs["bo_settings"]["Heat Treatment"][heats[i]] = input_box 
@@ -204,7 +204,7 @@ def generateMainGUI(mode):
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
         heats = ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']
         for i , key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
-            key_label = widgets.Label(f"{key}:", layout=Layout(width='130px'))
+            key_label = widgets.Label(f"{key}:", layout=Layout(width='140px'))
             input_box = widgets.RadioButtons(value=settings.categorical_default, options=['True', 'False'], description = '', disabled=False, indent=False)
             ht_settings_VBox.append(HBox([key_label, input_box]))
             GUI_inputs["bo_settings"]["Heat Treatment"][heats[i]] = input_box 
