@@ -109,7 +109,7 @@ def generateMainGUI(mode):
                     "bo_settings": {}
                     }
     
-        range_based_inputs_VBox = [widgets.HTML("<b>Component Bound (wt. %) </b>")]
+        range_based_inputs_VBox = [widgets.HTML("<b>Component Bound (wt. %): </b>")]
         for key in settings.range_based_inputs:
             if key not in ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']:
                 key_label = widgets.Label(f"{key}:", layout=Layout(width=KEY_LABEL_WIDTH))
@@ -121,7 +121,7 @@ def generateMainGUI(mode):
                     
         heats = ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']
         
-        ht_settings_VBox = [widgets.HTML("<b>Heat Treatment</b>")]
+        ht_settings_VBox = [widgets.HTML("<b>Thermomechanical process:</b>")]
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
         for i, key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
             key_label = widgets.Label(f"{key}:", layout=Layout(width='80px'))
@@ -189,7 +189,7 @@ def generateMainGUI(mode):
                     "bo_settings": {}
                     }
     
-        range_based_inputs_VBox = [widgets.HTML("<b>Component Bound (wt. %) </b>")]
+        range_based_inputs_VBox = [widgets.HTML("<b>Component Bound (wt. %): </b>")]
         for key in settings.range_based_inputs:
             if key not in ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']:
                 key_label = widgets.Label(f"{key}:", layout=Layout(width=KEY_LABEL_WIDTH))
@@ -200,7 +200,7 @@ def generateMainGUI(mode):
                 GUI_inputs["range_based_inputs"][key] = [lower_bound_box, upper_bound_box]
                     
         
-        ht_settings_VBox = [widgets.HTML("<b>Heat Treatment</b>")]
+        ht_settings_VBox = [widgets.HTML("<b>Thermomechanical process:</b>")]
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
         heats = ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']
         for i , key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
@@ -272,17 +272,17 @@ def generateMainGUI(mode):
                   "categorical_inputs": {}
                   }
 
-        range_based_inputs_VBox = [widgets.HTML("<b>Range-based Inputs (wt. %)    </b>")]
+        range_based_inputs_VBox = [widgets.HTML("<b>Component Value (wt. %):    </b>")]
         for key in settings.range_based_inputs:
             key_label = widgets.Label(f"{key}:", layout=Layout(width=KEY_LABEL_WIDTH))
             lower_bound_box = widgets.FloatText(value=settings.range_based_inputs[key][0], layout=default_input_box_layout)
             range_based_inputs_VBox.append(HBox([key_label, lower_bound_box]))
             GUI_inputs["range_based_inputs"][key] = [lower_bound_box]
     
-        categorical_inputs_VBox = [widgets.HTML("<b>Categorical Inputs</b>")]
+        categorical_inputs_VBox = [widgets.HTML("<b>Thermomechanical process:</b>")]
         ht_labels = ['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']
         for key in settings.categorical_inputs:
-            categorical_inputs_VBox.append(widgets.HTML(f'{key}:'))
+            #categorical_inputs_VBox.append(widgets.HTML(f'{key}:'))
             GUI_inputs["categorical_inputs"][key] = []
             options = []
             for i, value in enumerate(settings.categorical_inputs_info[key]['tag']):
