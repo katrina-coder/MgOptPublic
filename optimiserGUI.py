@@ -94,7 +94,7 @@ def generateMainGUI(mode):
     settings = scanSettings(mode)
     KEY_LABEL_WIDTH = "40px"
     TO_LABEL_WIDTH = "15px"
-    INPUT_BOX_WIDTH = "60px"
+    INPUT_BOX_WIDTH = "70px"
     INPUT_BOX_HEIGHT = "20px"
 
     LEFT_RIGHT_PADDING = Layout(margin="0px 30px 0px 30px")
@@ -141,12 +141,12 @@ def generateMainGUI(mode):
         scan_settings_VBox.append(HBox([label, input_box]))
         GUI_inputs["bo_settings"]["Number of Suggestions"] = input_box
         
-        label = widgets.Label("Number of Alloying Elements: ",layout=Layout(width=bo_settings_width))
+        label = widgets.Label("Max. Number of Alloying Elements: ",layout=Layout(width=bo_settings_width))
         input_box = widgets.FloatText(value=settings.num_elems, layout=default_input_box_layout)
         scan_settings_VBox.append(HBox([label, input_box]))
         GUI_inputs["bo_settings"]["Number of Elements"] = input_box
         
-        label = widgets.Label("Maximum Sum of Alloying Elements (wt%): ",layout=Layout(width=bo_settings_width))
+        label = widgets.Label("Max. Sum of Alloying Elements (wt%): ",layout=Layout(width=bo_settings_width))
         input_box = widgets.FloatText(value=settings.sum_elems, layout=default_input_box_layout)
         scan_settings_VBox.append(HBox([label, input_box]))
         GUI_inputs["bo_settings"]["Percentage Sum of Elements"] = input_box
