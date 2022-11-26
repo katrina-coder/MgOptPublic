@@ -301,7 +301,7 @@ def generateMainGUI(mode):
     
         first_column = VBox(range_based_inputs_VBox)
     
-        second_column = VBox([VBox(categorical_inputs_VBox, layout=BOTTOM_PADDING)])
+        second_column = VBox([VBox(categorical_inputs_VBox, layout=LEFT_RIGHT_PADDING)])
         display(HBox([first_column, second_column]))
     
         run_scan_button = widgets.Button(description="Run Model")
