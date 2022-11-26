@@ -124,7 +124,7 @@ def generateMainGUI(mode):
         ht_settings_VBox = [widgets.HTML("<b>Thermomechanical process:</b>")]
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
         for i, key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
-            key_label = widgets.Label(f"{key}:", layout=Layout(width='80px'))
+            key_label = widgets.Label(f"{key}:", layout=Layout(width='130px'))
             input_box = widgets.RadioButtons(value=settings.normalize_target, options=['True', 'False'], description = '', disabled=False, indent=False)
             ht_settings_VBox.append(HBox([key_label, input_box]))
             GUI_inputs["bo_settings"]["Heat Treatment"][heats[i]] = input_box 
@@ -204,7 +204,7 @@ def generateMainGUI(mode):
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
         heats = ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']
         for i , key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
-            key_label = widgets.Label(f"{key}:", layout=Layout(width='80px'))
+            key_label = widgets.Label(f"{key}:", layout=Layout(width='130px'))
             input_box = widgets.RadioButtons(value=settings.categorical_default, options=['True', 'False'], description = '', disabled=False, indent=False)
             ht_settings_VBox.append(HBox([key_label, input_box]))
             GUI_inputs["bo_settings"]["Heat Treatment"][heats[i]] = input_box 
@@ -272,7 +272,7 @@ def generateMainGUI(mode):
                   "categorical_inputs": {}
                   }
 
-        range_based_inputs_VBox = [widgets.HTML("<b>Component Value (wt. %):    </b>")]
+        range_based_inputs_VBox = [widgets.HTML("<b>Component (wt. %):           </b>")]
         for key in settings.range_based_inputs:
             key_label = widgets.Label(f"{key}:", layout=Layout(width=KEY_LABEL_WIDTH))
             lower_bound_box = widgets.FloatText(value=settings.range_based_inputs[key][0], layout=default_input_box_layout)
