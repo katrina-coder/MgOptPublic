@@ -94,7 +94,7 @@ def generateMainGUI(mode):
     settings = scanSettings(mode)
     KEY_LABEL_WIDTH = "40px"
     TO_LABEL_WIDTH = "15px"
-    INPUT_BOX_WIDTH = "70px"
+    INPUT_BOX_WIDTH = "80px"
     INPUT_BOX_HEIGHT = "20px"
 
     LEFT_RIGHT_PADDING = Layout(margin="0px 30px 0px 30px")
@@ -123,7 +123,7 @@ def generateMainGUI(mode):
         
         ht_settings_VBox = [widgets.HTML("<b>Thermomechanical Process:</b>")]
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
-        for i, key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
+        for i, key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + Heat Treatment','Wrought']):
             key_label = widgets.Label(f"{key}:", layout=Layout(width='140px'))
             input_box = widgets.RadioButtons(value=settings.normalize_target, options=['True', 'False'], description = '', disabled=False, indent=False)
             ht_settings_VBox.append(HBox([key_label, input_box]))
@@ -203,15 +203,15 @@ def generateMainGUI(mode):
         ht_settings_VBox = [widgets.HTML("<b>Thermomechanical Process:</b>")]
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
         heats = ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']
-        for i , key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
+        for i , key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + Heat Treatment','Wrought']):
             key_label = widgets.Label(f"{key}:", layout=Layout(width='140px'))
             input_box = widgets.RadioButtons(value=settings.categorical_default, options=['True', 'False'], description = '', disabled=False, indent=False)
             ht_settings_VBox.append(HBox([key_label, input_box]))
             GUI_inputs["bo_settings"]["Heat Treatment"][heats[i]] = input_box 
         
-        bo_settings_width = '150px'
+        bo_settings_width = '180px'
         scan_settings_VBox = [widgets.HTML("<b>Inverse Sampling Settings</b>")]
-        label = widgets.Label("Desired Output Name:", layout=Layout(width='150px'))
+        label = widgets.Label("Desired Output Name:", layout=Layout(width='180px'))
         input_box = widgets.Dropdown(
         options=['UTS','Ductility'],
         value=settings.output_name,  layout=default_input_box_layout,
@@ -236,12 +236,12 @@ def generateMainGUI(mode):
         scan_settings_VBox.append(HBox([label, input_box]))
         GUI_inputs["bo_settings"]["Number of Suggestions"] = input_box
         
-        label = widgets.Label("Number of Alloying Elements: ",layout=Layout(width=bo_settings_width))
+        label = widgets.Label("Max. Number of Elements: ",layout=Layout(width=bo_settings_width))
         input_box = widgets.FloatText(value=settings.num_elems, layout=default_input_box_layout)
         scan_settings_VBox.append(HBox([label, input_box]))
         GUI_inputs["bo_settings"]["Number of Elements"] = input_box
         
-        label = widgets.Label("Maximum Sum of Alloying Elements (wt%): ",layout=Layout(width=bo_settings_width))
+        label = widgets.Label("Max. Sum of Elements (wt%): ",layout=Layout(width=bo_settings_width))
         input_box = widgets.FloatText(value=settings.sum_elems, layout=default_input_box_layout)
         scan_settings_VBox.append(HBox([label, input_box]))
         GUI_inputs["bo_settings"]["Percentage Sum of Elements"] = input_box     
@@ -280,7 +280,7 @@ def generateMainGUI(mode):
             GUI_inputs["range_based_inputs"][key] = [lower_bound_box]
     
         categorical_inputs_VBox = [widgets.HTML("<b>Thermomechanical Process:</b>")]
-        ht_labels = ['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']
+        ht_labels = ['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + Heat Treatment','Wrought']
         for key in settings.categorical_inputs:
             #categorical_inputs_VBox.append(widgets.HTML(f'{key}:'))
             GUI_inputs["categorical_inputs"][key] = []
