@@ -121,7 +121,7 @@ def generateMainGUI(mode):
                     
         heats = ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']
         
-        ht_settings_VBox = [widgets.HTML("<b>Thermomechanical process:</b>")]
+        ht_settings_VBox = [widgets.HTML("<b>Thermomechanical Process:</b>")]
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
         for i, key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
             key_label = widgets.Label(f"{key}:", layout=Layout(width='140px'))
@@ -200,7 +200,7 @@ def generateMainGUI(mode):
                 GUI_inputs["range_based_inputs"][key] = [lower_bound_box, upper_bound_box]
                     
         
-        ht_settings_VBox = [widgets.HTML("<b>Thermomechanical process:</b>")]
+        ht_settings_VBox = [widgets.HTML("<b>Thermomechanical Process:</b>")]
         GUI_inputs["bo_settings"]["Heat Treatment"] = {}
         heats = ['Extruded', 'ECAP','Cast_Slow', 'Cast_Fast', 'Cast_HT','Wrought']
         for i , key in enumerate(['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']):
@@ -209,19 +209,19 @@ def generateMainGUI(mode):
             ht_settings_VBox.append(HBox([key_label, input_box]))
             GUI_inputs["bo_settings"]["Heat Treatment"][heats[i]] = input_box 
         
-        bo_settings_width = '100px'
-        scan_settings_VBox = [widgets.HTML("<b>Inverse Sampling settings</b>")]
-        label = widgets.Label("Desired Output:", layout=Layout(width='120px'))
+        bo_settings_width = '150px'
+        scan_settings_VBox = [widgets.HTML("<b>Inverse Sampling Settings</b>")]
+        label = widgets.Label("Desired Output Name:", layout=Layout(width='150px'))
         input_box = widgets.Dropdown(
         options=['UTS','Ductility'],
-        value=settings.output_name,
+        value=settings.output_name,  layout=default_input_box_layout,
         description='',
         style={'description_width': 'initial'},
         disabled=False)
         scan_settings_VBox.append(HBox([label, input_box]))
         GUI_inputs["bo_settings"]["Output Name"] = input_box
         
-        label = widgets.Label("Desired Output: ",layout=Layout(width=bo_settings_width))
+        label = widgets.Label("Desired Output Value: ",layout=Layout(width=bo_settings_width))
         input_box = widgets.FloatText(value=settings.desired_y, layout=default_input_box_layout)
         scan_settings_VBox.append(HBox([label, input_box]))
         GUI_inputs["bo_settings"]["Desired y"] = input_box
@@ -279,7 +279,7 @@ def generateMainGUI(mode):
             range_based_inputs_VBox.append(HBox([key_label, lower_bound_box]))
             GUI_inputs["range_based_inputs"][key] = [lower_bound_box]
     
-        categorical_inputs_VBox = [widgets.HTML("<b>Thermomechanical process:</b>")]
+        categorical_inputs_VBox = [widgets.HTML("<b>Thermomechanical Process:</b>")]
         ht_labels = ['Extruded', 'ECAP','Cast (Slow)', 'Cast (Fast)', 'Cast + HeatTreatment','Wrought']
         for key in settings.categorical_inputs:
             #categorical_inputs_VBox.append(widgets.HTML(f'{key}:'))
