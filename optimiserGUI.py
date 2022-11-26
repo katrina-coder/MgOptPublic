@@ -211,7 +211,7 @@ def generateMainGUI(mode):
         
         bo_settings_width = '200px'
         scan_settings_VBox = [widgets.HTML("<b>Inverse Sampling settings</b>")]
-        label = widgets.Label("desired output:", layout=Layout(width='80px'))
+        label = widgets.Label("Desired Output:", layout=Layout(width='120px'))
         input_box = widgets.Dropdown(
         options=['UTS','Ductility'],
         value=settings.output_name,
